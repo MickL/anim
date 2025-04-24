@@ -50,11 +50,10 @@ watch(isOpen, () => {
       exit="hidden"
       :variants="{
         visible: {
-          transform: 'translateX(0)',
+          x: 0,
         },
         hidden: {
-          transform:
-            from === 'right' ? 'translateX(100%)' : 'translateX(-100%)',
+          x: from === 'right' ? '100%' : '-100%',
         },
       }"
       :transition="{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }"

@@ -40,29 +40,10 @@ const isVisible = ref(false);
 
   <div class="container mx-auto mt-8 text-center">
     <Drawer
-        title="123"
-        ariaLabelClose="123"
+        ariaLabelClose="123123"
+        title="213123"
     >
-      <template #trigger>
-        <DrawerTrigger class="bg-red-400 p-4 font-medium rounded-sm hover:scale-110 transition-transform ease-out"
-        >
-          Dont push me!
-        </DrawerTrigger>
-      </template>
-
-      <motion.div
-          :variants="{
-          visible: {
-            opacity: 1,
-            transition: { delay: .3, duration: 1 },
-          },
-          hidden: {
-            opacity: 0,
-          },
-        }"
-      >
-        Yoooo
-      </motion.div>
+      12312312312
     </Drawer>
   </div>
 </template>
