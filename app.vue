@@ -50,7 +50,19 @@ const isVisible = ref(false);
         </DrawerTrigger>
       </template>
 
-      Hello world!
+      <motion.div
+          :variants="{
+          visible: {
+            opacity: 1,
+            transition: { delay: .3, duration: 1 },
+          },
+          hidden: {
+            opacity: 0,
+          },
+        }"
+      >
+        Yoooo
+      </motion.div>
     </Drawer>
   </div>
 </template>
