@@ -43,7 +43,28 @@ const isVisible = ref(false);
         ariaLabelClose="123123"
         title="213123"
     >
+      <template #trigger>
+        <DrawerTrigger class="bg-red-400 p-4 font-medium rounded-sm hover:scale-110 transition-transform ease-out"
+        >
+          Dont push me!
+        </DrawerTrigger>
+      </template>
+
       12312312312
+    </Drawer>
+
+    <Drawer
+        ariaLabelClose="123123"
+        title="213123"
+    >
+      <template #trigger>
+        <DrawerTrigger class="bg-red-400 p-4 font-medium rounded-sm hover:scale-110 transition-transform ease-out"
+        >
+          2
+        </DrawerTrigger>
+      </template>
+
+      22222
     </Drawer>
   </div>
 </template>
