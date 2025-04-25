@@ -32,7 +32,7 @@ const isVisible = ref(false);
           },
         }"
         :transition="{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }"
-        class="bg-white shadow-lg fixed top-0 bottom-0 right-0 z-100 w-90dvw md:max-w-100"
+        class="bg-white shadow-lg fixed top-0 bottom-0 right-0 z-100 w-[calc(100dvw---spacing(4))] md:max-w-100"
     >
       <FocusScope
           :trapped="true"
