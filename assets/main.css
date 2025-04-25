@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
 @theme {
-    --spacing: 0.3125rem; /* Set to "0.25rem" and it works! */
+    --spacing: 0.313rem; /* Set to "0.25rem" and it works! */
 }
