@@ -8,7 +8,7 @@ const isVisible = ref(false);
 </script>
 
 <template>
-  <div class="container mx-auto mt-8 text-center">
+  <div class="mt-8 text-center">
     <button class="bg-red-400 p-4 font-medium rounded-sm hover:scale-108 transition-transform duration-250 ease-out"
             @click="isVisible = !isVisible"
     >
