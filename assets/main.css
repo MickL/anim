@@ -9,7 +9,7 @@
 @source inline("md:text-center");
 
 @theme {
-    --*: initial;
+    /*--*: initial;*/
 
     --font-sans: 'Inter', sans-serif;
     --font-serif: 'Merriweather', sans-serif;
