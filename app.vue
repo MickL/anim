@@ -24,16 +24,15 @@ const isVisible = ref(false);
         while-in-view="visible"
         exit="hidden"
         :variants="{
-        visible: {
-          x: 0,
-        },
-        hidden: {
-          x: '100%',
-        },
-      }"
+          visible: {
+            x: 0,
+          },
+          hidden: {
+            x: '100%',
+          },
+        }"
         :transition="{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }"
-        class="bg-white shadow-lg w-full fixed top-0 bottom-0 right-0 z-100 max-w-[calc(100dvw---spacing(4))] md:max-w-80"
-        ref="drawerRef"
+        class="bg-white shadow-lg fixed top-0 bottom-0 right-0 z-100 w-[calc(100dvw---spacing(4))] max-w-80"
     >
       <FocusScope
           :trapped="true"
