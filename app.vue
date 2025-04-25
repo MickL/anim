@@ -12,8 +12,9 @@ const isVisible = ref(false);
     <button class="bg-red-400 p-4 font-medium rounded-sm hover:scale-108 transition-transform duration-250 ease-out"
             @click="isVisible = !isVisible"
     >
-      Dont push me!
+      Toggle drawer
     </button>
+    <div class="text-sm text-gray-400 mt-1">Visible: {{ isVisible }}</div>
   </div>
 
   <AnimatePresence>
