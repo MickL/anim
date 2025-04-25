@@ -9,5 +9,12 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
-  }
+  },
+  app: {
+    head: {
+      bodyAttrs: {
+        class: 'bg-gray-100',
+      },
+    },
+  },
 })

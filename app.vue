@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {
-  VisuallyHidden
+  FocusScope,
 } from 'reka-ui';
 import {motion} from "motion-v";
 
@@ -8,63 +8,55 @@ const isVisible = ref(false);
 </script>
 
 <template>
-  <!--  <div class="container mx-auto mt-8 text-center">-->
-  <!--    <button class="bg-red-400 p-4 font-medium rounded-sm hover:scale-110 transition-transform ease-out"-->
-  <!--            @click="isVisible = !isVisible">-->
-  <!--      Dont push me!-->
-  <!--    </button>-->
-
-  <!--    <AnimatePresence>-->
-  <!--      <motion.div class="mt-4" v-if="isVisible" initial="hidden" whileInView="visible" exit="hidden">-->
-  <!--        <motion.div-->
-  <!--            :variants="{ visible: { opacity: 1 }, hidden: { opacity: 0, transition: { when: 'afterChildren' } } }">-->
-  <!--          Hello!-->
-  <!--        </motion.div>-->
-
-  <!--        <motion.ul-->
-  <!--            :variants="{ visible: { transition: { staggerChildren: 0.1 } }, hidden: { transition: { staggerChildren: 0.1, staggerDirection: -1 } }}"-->
-  <!--        >-->
-  <!--          <motion.li v-for="index in 5"-->
-  <!--                     :key="index"-->
-  <!--                     :variants="{-->
-  <!--                       visible: { opacity: 1 },-->
-  <!--                       hidden: { opacity: 0 },-->
-  <!--                     }"-->
-  <!--          >-->
-  <!--            {{ index }}-->
-  <!--          </motion.li>-->
-  <!--        </motion.ul>-->
-  <!--      </motion.div>-->
-  <!--    </AnimatePresence>-->
-  <!--  </div>-->
-
   <div class="container mx-auto mt-8 text-center">
-    <Drawer
-        ariaLabelClose="123123"
-        title="213123"
+    <button class="bg-red-400 p-4 font-medium rounded-sm hover:scale-108 transition-transform duration-250 ease-out"
+            @click="isVisible = !isVisible"
     >
-      <template #trigger>
-        <DrawerTrigger class="bg-red-400 p-4 font-medium rounded-sm hover:scale-110 transition-transform ease-out"
-        >
-          Dont push me!
-        </DrawerTrigger>
-      </template>
-
-      12312312312
-    </Drawer>
-
-    <Drawer
-        ariaLabelClose="123123"
-        title="213123"
-    >
-      <template #trigger>
-        <DrawerTrigger class="bg-red-400 p-4 font-medium rounded-sm hover:scale-110 transition-transform ease-out"
-        >
-          2
-        </DrawerTrigger>
-      </template>
-
-      22222
-    </Drawer>
+      Dont push me!
+    </button>
   </div>
+
+  <AnimatePresence>
+    <motion.div
+        v-show="isVisible"
+        initial="hidden"
+        while-in-view="visible"
+        exit="hidden"
+        :variants="{
+        visible: {
+          x: 0,
+        },
+        hidden: {
+          x: '100%',
+        },
+      }"
+        :transition="{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }"
+        class="bg-white shadow-lg w-full fixed top-0 bottom-0 right-0 z-100 max-w-[calc(100dvw---spacing(4))] md:max-w-80"
+        ref="drawerRef"
+    >
+      <FocusScope
+          :trapped="true"
+          loop
+      >
+        <button class="absolute top-4 right-4 font-medium hover:scale-108 transition-transform  duration-250 ease-out"
+                @click="isVisible = false"
+        >
+          Close
+        </button>
+
+        <div class="max-h-full overflow-y-auto">
+          <div class="p-4 pt-12 space-y-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque impedit iste maxime nisi perferendis
+              porro quae quo repellat sunt vero?</p>
+
+            <p>Adipisci, aspernatur, consectetur doloremque dolores exercitationem inventore iste nesciunt nostrum
+              numquam obcaecati, odit quam quis quos rem vero. Incidunt, suscipit!</p>
+
+            <p>Aliquid debitis eaque facilis hic, itaque mollitia pariatur voluptatibus? Ab dicta itaque, libero modi
+              nobis odit possimus reprehenderit totam vitae!</p>
+          </div>
+        </div>
+      </FocusScope>
+    </motion.div>
+  </AnimatePresence>
 </template>
